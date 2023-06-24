@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy color</title>
+</head>
+<style>
+    button{
+        height: 100px;
+        width: 100px;
+    }
+</style>
+<body>
+    <h1>COLOR IDV -- JOÃO ALVES PASSOS</h1>
+    <div>
+        <button id="color1" class="button"></button>
+        <p id="hex1">#000000</p>
+    </div>
+    <div>
+        <button id="color2" class="button"></button>
+        <p id="hex2">#EDE6E7</p>
+    </div>
+    <div>
+        <button id="color3" class="button"></button>
+        <p id="hex3">#A6A6A6</p>
+    </div>
+    <div>
+        <button id="color4" class="button"></button>
+        <p id="hex4">#D11531</p>
+    </div>
+    <div>
+        <button id="color5" class="button"></button>
+        <p id="hex5">#8A2430</p>
+    </div>
+    <div>
+        <button id="color6" class="button"></button>
+        <p id="hex6">#1651DB</p>
+    </div>
+    <div>
+        <button id="color7" class="button"></button>
+        <p id="hex7">#2A4DA1</p>
+    </div>
+</body>
+
+<script>
+    document.getElementById("color1").addEventListener("click", function() 
+    {
+        var texto = document.getElementById("hex1");
+        var range = document.createRange();
+        range.selectNode(texto);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand("copy");
+        window.getSelection().removeAllRanges();
+        alert("Texto copiado!");
+    });
+    document.getElementById("color2").addEventListener("click", function() 
+    {
+        var texto = document.getElementById("hex2");
+        var range = document.createRange();
+        range.selectNode(texto);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand("copy");
+        window.getSelection().removeAllRanges();
+        alert("Texto copiado!");
+    });
+    document.getElementById("color3").addEventListener("click", function() 
+    {
+        var texto = document.getElementById("hex3");
+        var range = document.createRange();
+        range.selectNode(texto);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand("copy");
+        window.getSelection().removeAllRanges();
+        alert("Texto copiado!");
+    });
+    document.getElementById("color4").addEventListener("click", function() 
+    {
+        var texto = document.getElementById("hex4");
+        var range = document.createRange();
+        range.selectNode(texto);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand("copy");
+        window.getSelection().removeAllRanges();
+        alert("Texto copiado!");
+    });
+    document.getElementById("color5").addEventListener("click", function() 
+    {
+        var texto = document.getElementById("hex5");
+        var range = document.createRange();
+        range.selectNode(texto);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand("copy");
+        window.getSelection().removeAllRanges();
+        alert("Texto copiado!");
+    });
+    document.getElementById("color6").addEventListener("click", function() 
+    {
+        var texto = document.getElementById("hex6");
+        var range = document.createRange();
+        range.selectNode(texto);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand("copy");
+        window.getSelection().removeAllRanges();
+        alert("Texto copiado!");
+    });
+    document.getElementById("color7").addEventListener("click", function() 
+    {
+        var texto = document.getElementById("hex7");
+        var range = document.createRange();
+        range.selectNode(texto);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand("copy");
+        window.getSelection().removeAllRanges();
+        alert("Texto copiado!");
+    });
+</script>
+
+</html>
