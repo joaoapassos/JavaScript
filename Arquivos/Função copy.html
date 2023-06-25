@@ -3,124 +3,515 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Copy color</title>
+    <title>Color Palette</title>
+    <link rel="shortcut icon" href="./Color-icon-logo/icon-logo-color4.png" type="image/x-icon">
+    
 </head>
 <style>
-    button{
-        height: 100px;
-        width: 100px;
+    @import url('https://fonts.googleapis.com/css2?family=Fascinate&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    body{
+        height: 90vh;
+        background-color: #EDE6E7;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+        font-family: 'Rubik';
+    }
+    .botoes{
+        padding: 20vh;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        
+    }
+    .botao{
+        padding: 15px;
+        transition: 0.4s;
+    }
+    .botao img{
+        height:70px;
+        cursor: pointer;
+    }
+    .botao:hover{
+        filter: opacity(50%);
+    }
+    .botao p{
+        cursor: pointer;
+        font-size: 20px;
+    }
+    img{
+        min-height: 50px;
+        min-width: 50px;
+    }
+    #color1{
+        background-image: url(./Color-icon-logo/icon-logo-color.png);
+        
+    }
+    .CopyMs{
+        display: none;
+    }
+    .mensagem{
+        display: none;
     }
 </style>
 <body>
-    <h1>COLOR IDV -- JOÃO ALVES PASSOS</h1>
-    <div>
-        <button id="color1" class="button"></button>
-        <p id="hex1">#000000</p>
-    </div>
-    <div>
-        <button id="color2" class="button"></button>
-        <p id="hex2">#EDE6E7</p>
-    </div>
-    <div>
-        <button id="color3" class="button"></button>
-        <p id="hex3">#A6A6A6</p>
-    </div>
-    <div>
-        <button id="color4" class="button"></button>
-        <p id="hex4">#D11531</p>
-    </div>
-    <div>
-        <button id="color5" class="button"></button>
-        <p id="hex5">#8A2430</p>
-    </div>
-    <div>
-        <button id="color6" class="button"></button>
-        <p id="hex6">#1651DB</p>
-    </div>
-    <div>
-        <button id="color7" class="button"></button>
-        <p id="hex7">#2A4DA1</p>
+    <h1>COLOR PALETTE -- JOÃO ALVES PASSOS</h1>
+    <div class="botoes">
+        <div class="botao btn1" title="Copiar cor">
+            <img src="./Color-icon-logo/icon-logo-color.png" alt="Color 1" id="color1" class="img1"></img>
+            <p id="hex1">#000000</p>
+            <div class="mensagem" id="ms_copy1"><p>Copiado</p></div>
+            <div class="CopyMs" id="copy1"><p>Copiar</p></div>
+        </div>
+        <div class="botao btn2" title="Copiar cor">
+            <img src="./Color-icon-logo/icon-logo-color2.png" alt="Color 2" id="color2" class="img2"></img>
+            <p id="hex2">#EDE6E7</p>
+            <div class="mensagem" id="ms_copy2"><p>Copiado</p></div>
+            <div class="CopyMs" id="copy2"><p>Copiar</p></div>
+        </div>
+        <div class="botao btn3" title="Copiar cor">
+            <img src="./Color-icon-logo/icon-logo-color3.png" alt="Color 3" id="color3" class="img3"></img>
+            <p id="hex3">#A6A6A6</p>
+            <div class="mensagem" id="ms_copy3"><p>Copiado</p></div>
+            <div class="CopyMs" id="copy3"><p>Copiar</p></div>
+        </div>
+        <div class="botao btn4" title="Copiar cor">
+            <img src="./Color-icon-logo/icon-logo-color4.png" alt="Color 4" id="color4" class="img4"></img>
+            <p id="hex4">#D11531</p>
+            <div class="mensagem" id="ms_copy4"><p>Copiado</p></div>
+            <div class="CopyMs" id="copy4"><p>Copiar</p></div>
+        </div>
+        <div class="botao btn5" title="Copiar cor">
+            <img src="./Color-icon-logo/icon-logo-color5.png" alt="Color 5" id="color5" class="img5"></img>
+            <p id="hex5">#8A2430</p>
+            <div class="mensagem" id="ms_copy5"><p>Copiado</p></div>
+            <div class="CopyMs" id="copy5"><p>Copiar</p></div>
+        </div>
+        <div class="botao btn6" title="Copiar cor">
+            <img src="./Color-icon-logo/icon-logo-color6.png" alt="Color 6" id="color6" class="img6"></img>
+            <p id="hex6">#1651DB</p>
+            <div class="mensagem" id="ms_copy6"><p>Copiado</p></div>
+            <div class="CopyMs" id="copy6"><p>Copiar</p></div>
+        </div>
+        <div class="botao btn7" title="Copiar cor">
+            <img src="./Color-icon-logo/icon-logo-color7.png" alt="Color 7" id="color7" class="img7"></img>
+            <p id="hex7">#2A4DA1</p>
+            <div class="mensagem" id="ms_copy7"><p>Copiado</p></div>
+            <div class="CopyMs" id="copy7"><p>Copiar</p></div>
+        </div>
     </div>
 </body>
 
 <script>
     document.getElementById("color1").addEventListener("click", function() 
     {
-        var texto = document.getElementById("hex1");
-        var range = document.createRange();
+        let texto = document.getElementById("hex1");
+        let range = document.createRange();
         range.selectNode(texto);
         window.getSelection().removeAllRanges();
         window.getSelection().addRange(range);
         document.execCommand("copy");
         window.getSelection().removeAllRanges();
-        alert("Texto copiado!");
+
+        let mensagem = document.getElementById("ms_copy1");
+        let MsCopy = document.getElementById("copy1");
+        mensagem.style.display = "block";
+        MsCopy.style.display = "none"
+        texto.style.display = "none";
+        setTimeout(function()
+        {
+            mensagem.style.display = "none";
+            texto.style.display = "block";
+        }, 1000
+        );
+
+    });
+    document.getElementById("hex1").addEventListener("click", function() 
+    {
+        let texto = document.getElementById("hex1");
+        let range = document.createRange();
+        range.selectNode(texto);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand("copy");
+        window.getSelection().removeAllRanges();
+
+        let mensagem = document.getElementById("ms_copy1");
+        let MsCopy = document.getElementById("copy1");
+        mensagem.style.display = "block";
+        MsCopy.style.display = "none"
+        texto.style.display = "none";
+        setTimeout(function()
+        {
+            mensagem.style.display = "none";
+            texto.style.display = "block";
+        }, 1000
+        );
+
     });
     document.getElementById("color2").addEventListener("click", function() 
     {
-        var texto = document.getElementById("hex2");
-        var range = document.createRange();
+        let texto = document.getElementById("hex2");
+        let range = document.createRange();
         range.selectNode(texto);
         window.getSelection().removeAllRanges();
         window.getSelection().addRange(range);
         document.execCommand("copy");
         window.getSelection().removeAllRanges();
-        alert("Texto copiado!");
+
+        let mensagem = document.getElementById("ms_copy2");
+        let MsCopy = document.getElementById("copy2");
+        mensagem.style.display = "block";
+        MsCopy.style.display = "none";
+        texto.style.display = "none";
+        setTimeout(function()
+        {
+            mensagem.style.display = "none";
+            texto.style.display = "block";
+        }, 1000
+        );
+    });
+    document.getElementById("hex2").addEventListener("click", function() 
+    {
+        let texto = document.getElementById("hex2");
+        let range = document.createRange();
+        range.selectNode(texto);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand("copy");
+        window.getSelection().removeAllRanges();
+
+        let mensagem = document.getElementById("ms_copy2");
+        let MsCopy = document.getElementById("copy2");
+        mensagem.style.display = "block";
+        MsCopy.style.display = "none"
+        texto.style.display = "none";
+        setTimeout(function()
+        {
+            mensagem.style.display = "none";
+            texto.style.display = "block";
+        }, 1000
+        );
+
     });
     document.getElementById("color3").addEventListener("click", function() 
     {
-        var texto = document.getElementById("hex3");
-        var range = document.createRange();
+        let texto = document.getElementById("hex3");
+        let range = document.createRange();
         range.selectNode(texto);
         window.getSelection().removeAllRanges();
         window.getSelection().addRange(range);
         document.execCommand("copy");
         window.getSelection().removeAllRanges();
-        alert("Texto copiado!");
+        
+        let mensagem = document.getElementById("ms_copy3");
+        let MsCopy = document.getElementById("copy3");
+        mensagem.style.display = "block";
+        MsCopy.style.display = "none";
+        texto.style.display = "none";
+        setTimeout(function()
+        {
+            mensagem.style.display = "none";
+            texto.style.display = "block";
+        }, 1000
+        );
+    });
+    document.getElementById("hex3").addEventListener("click", function() 
+    {
+        let texto = document.getElementById("hex3");
+        let range = document.createRange();
+        range.selectNode(texto);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand("copy");
+        window.getSelection().removeAllRanges();
+
+        let mensagem = document.getElementById("ms_copy3");
+        let MsCopy = document.getElementById("copy3");
+        mensagem.style.display = "block";
+        MsCopy.style.display = "none"
+        texto.style.display = "none";
+        setTimeout(function()
+        {
+            mensagem.style.display = "none";
+            texto.style.display = "block";
+        }, 1000
+        );
+
     });
     document.getElementById("color4").addEventListener("click", function() 
     {
-        var texto = document.getElementById("hex4");
-        var range = document.createRange();
+        let texto = document.getElementById("hex4");
+        let MsCopy = document.getElementById("copy4");
+        let range = document.createRange();
         range.selectNode(texto);
         window.getSelection().removeAllRanges();
         window.getSelection().addRange(range);
         document.execCommand("copy");
         window.getSelection().removeAllRanges();
-        alert("Texto copiado!");
+
+        let mensagem = document.getElementById("ms_copy4");
+        mensagem.style.display = "block";
+        MsCopy.style.display = "none";
+        texto.style.display = "none";
+        setTimeout(function()
+        {
+            mensagem.style.display = "none";
+            texto.style.display = "block";
+        }, 1000
+        );
+    });
+    document.getElementById("hex4").addEventListener("click", function() 
+    {
+        let texto = document.getElementById("hex4");
+        let range = document.createRange();
+        range.selectNode(texto);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand("copy");
+        window.getSelection().removeAllRanges();
+
+        let mensagem = document.getElementById("ms_copy4");
+        let MsCopy = document.getElementById("copy4");
+        mensagem.style.display = "block";
+        MsCopy.style.display = "none"
+        texto.style.display = "none";
+        setTimeout(function()
+        {
+            mensagem.style.display = "none";
+            texto.style.display = "block";
+        }, 1000
+        );
+
     });
     document.getElementById("color5").addEventListener("click", function() 
     {
-        var texto = document.getElementById("hex5");
-        var range = document.createRange();
+        let texto = document.getElementById("hex5");
+        let MsCopy = document.getElementById("copy5");
+        let range = document.createRange();
         range.selectNode(texto);
         window.getSelection().removeAllRanges();
         window.getSelection().addRange(range);
         document.execCommand("copy");
         window.getSelection().removeAllRanges();
-        alert("Texto copiado!");
+        
+        let mensagem = document.getElementById("ms_copy5");
+        mensagem.style.display = "block";
+        MsCopy.style.display = "none";
+        texto.style.display = "none";
+        setTimeout(function()
+        {
+            mensagem.style.display = "none";
+            texto.style.display = "block";
+        }, 1000
+        );
+    });
+    document.getElementById("hex5").addEventListener("click", function() 
+    {
+        let texto = document.getElementById("hex5");
+        let range = document.createRange();
+        range.selectNode(texto);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand("copy");
+        window.getSelection().removeAllRanges();
+
+        let mensagem = document.getElementById("ms_copy5");
+        let MsCopy = document.getElementById("copy5");
+        mensagem.style.display = "block";
+        MsCopy.style.display = "none"
+        texto.style.display = "none";
+        setTimeout(function()
+        {
+            mensagem.style.display = "none";
+            texto.style.display = "block";
+        }, 1000
+        );
+
     });
     document.getElementById("color6").addEventListener("click", function() 
     {
-        var texto = document.getElementById("hex6");
-        var range = document.createRange();
+        let texto = document.getElementById("hex6");
+        let MsCopy = document.getElementById("copy6");
+        let range = document.createRange();
         range.selectNode(texto);
         window.getSelection().removeAllRanges();
         window.getSelection().addRange(range);
         document.execCommand("copy");
         window.getSelection().removeAllRanges();
-        alert("Texto copiado!");
+        
+        let mensagem = document.getElementById("ms_copy6");
+        mensagem.style.display = "block";
+        MsCopy.style.display = "none";
+        texto.style.display = "none";
+        setTimeout(function()
+        {
+            mensagem.style.display = "none";
+            texto.style.display = "block";
+        }, 1000
+        );
+    });
+    document.getElementById("hex6").addEventListener("click", function() 
+    {
+        let texto = document.getElementById("hex6");
+        let range = document.createRange();
+        range.selectNode(texto);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand("copy");
+        window.getSelection().removeAllRanges();
+
+        let mensagem = document.getElementById("ms_copy6");
+        let MsCopy = document.getElementById("copy6");
+        mensagem.style.display = "block";
+        MsCopy.style.display = "none"
+        texto.style.display = "none";
+        setTimeout(function()
+        {
+            mensagem.style.display = "none";
+            texto.style.display = "block";
+        }, 1000
+        );
+
     });
     document.getElementById("color7").addEventListener("click", function() 
     {
-        var texto = document.getElementById("hex7");
-        var range = document.createRange();
+        let texto = document.getElementById("hex7");
+        let MsCopy = document.getElementById("copy7");
+        let range = document.createRange();
         range.selectNode(texto);
         window.getSelection().removeAllRanges();
         window.getSelection().addRange(range);
         document.execCommand("copy");
         window.getSelection().removeAllRanges();
-        alert("Texto copiado!");
+        
+        let mensagem = document.getElementById("ms_copy7");
+        mensagem.style.display = "block";
+        MsCopy.style.display = "none";
+        texto.style.display = "none";
+        setTimeout(function()
+        {
+            mensagem.style.display = "none";
+            texto.style.display = "block";
+        }, 1000
+        );
     });
-</script>
+    document.getElementById("hex7").addEventListener("click", function() 
+    {
+        let texto = document.getElementById("hex7");
+        let range = document.createRange();
+        range.selectNode(texto);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand("copy");
+        window.getSelection().removeAllRanges();
 
+        let mensagem = document.getElementById("ms_copy7");
+        let MsCopy = document.getElementById("copy7");
+        mensagem.style.display = "block";
+        MsCopy.style.display = "none"
+        texto.style.display = "none";
+        setTimeout(function()
+        {
+            mensagem.style.display = "none";
+            texto.style.display = "block";
+        }, 1000
+        );
+
+    });
+
+
+
+
+    // document.getElementById("color1").addEventListener("mouseover", function()
+    // {
+    //     let MsCopy = document.getElementById("copy1");
+    //     let texto = document.getElementById("hex1");
+    //     MsCopy.style.display = "block";
+    //     texto.style.display = "none";
+    //     addEventListener("mouseout", function(){
+    //         MsCopy.style.display = "none";
+    //         texto.style.display = "block";
+    //     })
+    // }
+    // )
+    // document.getElementById("color2").addEventListener("mouseover", function()
+    // {
+    //     let MsCopy = document.getElementById("copy2");
+    //     let texto = document.getElementById("hex2");
+    //     MsCopy.style.display = "block";
+    //     texto.style.display = "none";
+    //     addEventListener("mouseout", function(){
+    //         MsCopy.style.display = "none";
+    //         texto.style.display = "block";
+    //     })
+    // }
+    // )
+    // document.getElementById("color3").addEventListener("mouseover", function()
+    // {
+    //     let MsCopy = document.getElementById("copy3");
+    //     let texto = document.getElementById("hex3");
+    //     MsCopy.style.display = "block";
+    //     texto.style.display = "none";
+    //     addEventListener("mouseout", function(){
+    //         MsCopy.style.display = "none";
+    //         texto.style.display = "block";
+    //     })
+    // }
+    // )
+    // document.getElementById("color4").addEventListener("mouseover", function()
+    // {
+    //     let MsCopy = document.getElementById("copy4");
+    //     let texto = document.getElementById("hex4");
+    //     MsCopy.style.display = "block";
+    //     texto.style.display = "none";
+    //     addEventListener("mouseout", function(){
+    //         MsCopy.style.display = "none";
+    //         texto.style.display = "block";
+    //     })
+    // }
+    // )
+    // document.getElementById("color5").addEventListener("mouseover", function()
+    // {
+    //     let MsCopy = document.getElementById("copy5");
+    //     let texto = document.getElementById("hex5");
+    //     MsCopy.style.display = "block";
+    //     texto.style.display = "none";
+    //     addEventListener("mouseout", function(){
+    //         MsCopy.style.display = "none";
+    //         texto.style.display = "block";
+    //     })
+    // }
+    // )
+    // document.getElementById("color6").addEventListener("mouseover", function()
+    // {
+    //     let MsCopy = document.getElementById("copy6");
+    //     let texto = document.getElementById("hex6");
+    //     MsCopy.style.display = "block";
+    //     texto.style.display = "none";
+    //     addEventListener("mouseout", function(){
+    //         MsCopy.style.display = "none";
+    //         texto.style.display = "block";
+    //     })
+    // }
+    // )
+    // document.getElementById("color7").addEventListener("mouseover", function()
+    // {
+    //     let MsCopy = document.getElementById("copy7");
+    //     let texto = document.getElementById("hex7");
+    //     MsCopy.style.display = "block";
+    //     texto.style.display = "none";
+    //     addEventListener("mouseout", function(){
+    //         MsCopy.style.display = "none";
+    //         texto.style.display = "block";
+    //     })
+    // }
+    // )
+
+
+
+</script>
 </html>
